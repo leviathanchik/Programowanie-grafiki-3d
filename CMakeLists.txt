@@ -26,4 +26,7 @@ link_libraries(OpenGL::GL glfw)
 add_subdirectory(src/Application)
 
 link_libraries(application)
-add_subdirectory(src/Exercises/Triangle)
+add_subdirectory(src/Exercises/Zadanie_2/Triangle)
+add_subdirectory(src/Exercises/Zadanie_1/Colors)
+add_subdirectory(src/Exercises/Zadanie_3/Indices)
+add_subdirectory(src/Exercises/Zadanie_4/Uniforms)

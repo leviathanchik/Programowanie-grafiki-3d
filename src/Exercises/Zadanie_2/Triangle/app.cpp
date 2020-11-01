@@ -26,7 +26,13 @@ void SimpleShapeApplication::init() {
     std::vector<GLfloat> vertices = {
             -0.5f, 0.0f, 0.0f,
             0.5f, 0.0f, 0.0f,
-            0.0f, 0.5f, 0.0f
+            0.0f, 0.5f, 0.0f,
+            -0.5f, 0.0f, 0.0f,
+            -0.5f, -0.7f, 0.0f,
+            0.5f, -0.7f, 0.0f,
+            0.5f, -0.7f, 0.0f,
+            0.5f, 0.0f, 0.0f,
+            -0.5f, 0.0f, 0.0f
     };
 
     GLuint v_buffer_handle;
@@ -56,6 +62,6 @@ void SimpleShapeApplication::init() {
 
 void SimpleShapeApplication::frame() {
     glBindVertexArray(vao_);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(GL_TRIANGLES, 0, 9);
     glBindVertexArray(0);
 }
