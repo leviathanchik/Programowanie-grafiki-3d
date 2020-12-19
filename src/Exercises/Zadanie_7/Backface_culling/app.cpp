@@ -94,7 +94,8 @@ void SimpleShapeApplication::init() {
     
     glm::mat4 M(1.0f);
     glm::mat4 V = glm::lookAt(glm::vec3{0.2, -0.2, 1.0}, glm::vec3{0.5f, 0.5f, 0.0f}, glm::vec3{0.0, 0.0, 1.0});
-    glm::mat4 P = glm::perspective(2.0f*glm::pi<float>()/3.0f, 0.5f,0.1f, 100.0f);
+    glm::mat4 P =  glm::perspective(glm::radians(45.0f),650.0f / 480.0f,0.1f,100.0f);// poprawione 19.12.2020
+
     glm::mat4 PVM = P * V * M;
     glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), &PVM[0]);
     glBindBuffer(GL_UNIFORM_BUFFER, 0);

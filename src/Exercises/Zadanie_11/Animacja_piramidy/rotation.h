@@ -6,21 +6,22 @@
 #include <cmath>
 
 inline glm::mat3 rotation(float angle, const glm::vec3 &axis) {
-    auto const A = glm::normalize(axis);
+    auto const u = glm::normalize(axis);
     auto const s = std::sin(angle);
     auto const c = std::cos(angle);
 
     return glm::mat3(
-            c + A.x * A.x * (1.0f - c),
-            A.y * A.x * (1.0f - c) + A.z * s,
-            A.z * A.x * (1.0f - c) - A.y * s,
+            c + u.x * u.x * (1.0f - c),
+            u.y * u.x * (1.0f - c) + u.z * s,
+            u.z * u.x * (1.0f - c) - u.y * s,
 
-            A.x * A.y * (1.0f - c) - A.z * s,
-            c + A.y * A.y * (1.0f - c),
-            A.z * A.y * (1.0f - c) + A.x * s,
+            u.x *u.y*(1.0f-c)-u.z *s,
+            c + u.y*u.y *(1.0f-c),
+            u.z*u.y*(1.0f-c)+u.x*s,
 
-            A.x * A.z * (1.0f - c) + A.y * s,
-            A.y * A.z * (1.0f - c) - A.x * s,
-            c + A.z * A.z * (1.0f - c)
+            u.x*u.z*(1.0f -c)+ u.y*s,
+            u.y*u.z*(1.0f-c)-u.x*s,
+            c+u.z*u.z*(1.0f -c)
     );
+
 }     
